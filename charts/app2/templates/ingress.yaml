@@ -5,10 +5,10 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: app2.local
+    - host: a46a2f6333ed6425fa7cb6dd6c32054d-1887091215.ap-south-1.elb.amazonaws.com
       http:
         paths:
-          - path: /
+          - path: /app2
             pathType: Prefix
             backend:
               service:
