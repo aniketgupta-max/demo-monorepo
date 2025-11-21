@@ -8,23 +8,22 @@ spec:
     - list:
         elements:
           - name: app1
-            namespace: app1
             path: charts/app1
           - name: app2
-            namespace: app2
             path: charts/app2
+
   template:
     metadata:
       name: '{{name}}'
     spec:
       project: default
       source:
-        repoURL: 'https://github.com/aniketgupta-max/demo-monorepo.git'
+        repoURL: 'https://github.com/aniketgupta-max/demo-monorepo.git'  # your repo
         targetRevision: main
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{namespace}}'
+        namespace: argocd          # <── IMPORTANT: deploy *both* apps into argocd
       syncPolicy:
         automated:
           prune: true
