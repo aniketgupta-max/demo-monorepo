@@ -18,12 +18,12 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/aniketgupta-max/demo-monorepo.git
+        repoURL: 'https://github.com/aniketgupta-max/demo-monorepo.git'
         targetRevision: main
         path: '{{path}}'
       destination:
-        server: https://kubernetes.default.svc
-        namespace: argocd  # <<< DEPLOY BOTH APPS HERE
+        server: 'https://kubernetes.default.svc'
+        namespace: argocd
       syncPolicy:
         automated:
           prune: true

@@ -7,11 +7,10 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/aniketgupta-max/demo-monorepo.git'
-    targetRevision: main            
-
+    targetRevision: main
     path: cluster
   destination:
-    server: https://kubernetes.default.svc
+    server: 'https://kubernetes.default.svc'
     namespace: argocd
   syncPolicy:
     automated:
