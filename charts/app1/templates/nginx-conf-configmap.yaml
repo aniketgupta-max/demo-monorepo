@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app1-nginx-conf
+data:
+  default.conf: |
+    server {
+      listen 80;
+      server_name _;
+
+      root /usr/share/nginx/html;
+
+      # Serve index.html for ANY path (/, /app1, /foo, etc.)
+      location / {
+        try_files $uri /index.html;
+      }
+    }
